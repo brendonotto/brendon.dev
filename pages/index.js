@@ -18,7 +18,8 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}>
-        &copy; {new Date().getFullYear()} Brendon Otto
+        &copy; {new Date().getFullYear()} Brendon Otto <br />
+        Made with ♥ in MN
       </footer>
     </div>
   )
