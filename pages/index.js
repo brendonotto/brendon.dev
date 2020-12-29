@@ -1,5 +1,7 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import Layout, {siteTitle} from '../components/layout'
+import Date from '../components/date'
 import styles from '../styles/Home.module.css'
 import {getSortedPostsData} from '../lib/posts'
 
@@ -25,20 +27,24 @@ export default function Home({ allPostsData }) {
         </h1>
 
         <div className={styles.grid}>
-          {allPostsData.map(({id, date, title}) => (
+          {allPostsData.map(({ id, date, title }) => {
+            return (
             <li key={id}>
-              {title}
+              <Link href={`/posts/${id}`}>
+                <a>{title}</a>
+              </Link>
               <br />
-              {id}
-              <br />
-              {date}
+              <small>
+                <Date dateString={date} />
+              </small>
             </li>
-          ))}
+            )
+          })}
         </div>
       </main>
 
       <footer className={styles.footer}>
-        &copy; {new Date().getFullYear()} Brendon Otto <br />
+        &copy; Brendon Otto <br />
         Made with ♥ in MN
       </footer>
     </Layout>
