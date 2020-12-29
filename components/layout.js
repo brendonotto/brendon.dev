@@ -3,6 +3,7 @@ import Link from 'next/link'
 import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 
+const name = "Brendon Otto"
 export const siteTitle = "Brendon's Blog"
 
 export default function Layout({ children, home }) {
@@ -16,7 +17,7 @@ export default function Layout({ children, home }) {
                 />
                 <meta
                     property="og:image"
-                    content={}
+                    content=""
                 />
                 <meta name="og:title" content={siteTitle} />
                 <meta name="twitter:card" content="summary_large_image" />
@@ -37,7 +38,7 @@ export default function Layout({ children, home }) {
                                 <a>
                                     <img
                                         src="/images/profile.jpg"
-                                        className={`${styles.headerImage} ${utilSytles.borderCircle}`}
+                                        className={`${styles.headerImage} ${utilStyles.borderCircle}`}
                                         alt={name}
                                     />
                                 </a>
@@ -49,7 +50,7 @@ export default function Layout({ children, home }) {
                             </h2>
                         </>
                     )
-                )}
+                }
             </header>
             <main>{children}</main>
             {!home && (

@@ -1,11 +1,22 @@
 import Head from 'next/head'
+import Layout, {siteTitle} from '../components/layout'
 import styles from '../styles/Home.module.css'
+import {getSortedPostsData} from '../lib/posts'
 
-export default function Home() {
+export async function getStaticProps() {
+  const allPostsData = getSortedPostsData()
+  return {
+    props: {
+      allPostsData
+    }
+  }
+}
+
+export default function Home({ allPostsData }) {
   return (
-    <div className={styles.container}>
+    <Layout className={styles.container}>
       <Head>
-        <title>Brendon Otto's Blog</title>
+        <title>{siteTitle}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -14,6 +25,15 @@ export default function Home() {
         </h1>
 
         <div className={styles.grid}>
+          {allPostsData.map(({id, date, title}) => (
+            <li key={id}>
+              {title}
+              <br />
+              {id}
+              <br />
+              {date}
+            </li>
+          ))}
         </div>
       </main>
 
@@ -21,6 +41,7 @@ export default function Home() {
         &copy; {new Date().getFullYear()} Brendon Otto <br />
         Made with ♥ in MN
       </footer>
-    </div>
+    </Layout>
   )
 }
+
