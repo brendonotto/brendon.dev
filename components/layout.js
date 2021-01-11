@@ -27,12 +27,12 @@ export default function Layout({ children, home }) {
                     <>
                         <Image
                             src="/images/profile.jpg"
-                            height={157}
+                            height={96}
                             width={96}
-                            className={`w-32 h-32 ${utilStyles.borderCircle}`}
+                            className="rounded-full w-32 h-32"
                             alt={name}
                         />
-                        <h1 className={utilStyles.heading2X1}>{name}</h1>
+                        <h1 className="text-4xl font-extrabold tracking-tighter my-4 mx-0">{name}</h1>
                     </>
                     ) : (
                         <>
@@ -40,12 +40,12 @@ export default function Layout({ children, home }) {
                                 <a>
                                     <img
                                         src="/images/profile.jpg"
-                                        className={`w-24 h-24 ${utilStyles.borderCircle}`}
+                                        className="rounded-full w-24 h-24"
                                         alt={name}
                                     />
                                 </a>
                             </Link>
-                            <h2 className={utilStyles.headingLg}>
+                            <h2 className="text-2xl my-4 mx-0">
                                 <Link href="/">
                                     <a className={utilStyles.colorInherit}>{name}</a>
                                 </Link>
