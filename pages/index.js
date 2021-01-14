@@ -2,7 +2,6 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Layout, {siteTitle} from '../components/layout'
 import DateComp from '../components/date'
-import styles from '../styles/Home.module.css'
 import {getSortedPostsData} from '../lib/posts'
 
 export async function getStaticProps() {
@@ -26,7 +25,7 @@ export default function Home({ allPostsData }) {
         <h1 className="m-0 text-6l">
         </h1>
 
-        <div className={styles.grid}>
+        <div className="flex items-center justify-center flex-wrap max-w-4xl mt-12">
           {allPostsData.map(({ id, date, title }) => {
             return (
             <li key={id} className="list-none">
@@ -43,9 +42,11 @@ export default function Home({ allPostsData }) {
         </div>
       </main>
 
-      <footer className={styles.footer}>
-        &copy; {new Date().getFullYear()} Brendon Otto <br />
-        Made with ♥ in MN
+      <footer className="w-full h-full border-t border-solid flex justify-center items-center">
+        <div className="mt-8">
+          &copy; {new Date().getFullYear()} Brendon Otto <br />
+          Made with ♥ in MN
+        </div>
       </footer>
     </Layout>
   )

@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
-import utilStyles from '../styles/utils.module.css'
 
 const name = "Brendon Otto"
 export const siteTitle = "Brendon's Blog"
@@ -38,8 +37,10 @@ export default function Layout({ children, home }) {
                         <>
                             <Link href="/">
                                 <a>
-                                    <img
+                                    <Image
                                         src="/images/profile.jpg"
+                                        height={96}
+                                        width={96}
                                         className="rounded-full w-24 h-24"
                                         alt={name}
                                     />
@@ -47,7 +48,7 @@ export default function Layout({ children, home }) {
                             </Link>
                             <h2 className="text-2xl my-4 mx-0">
                                 <Link href="/">
-                                    <a className={utilStyles.colorInherit}>{name}</a>
+                                    <a className="colors-inherit">{name}</a>
                                 </Link>
                             </h2>
                         </>
