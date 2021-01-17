@@ -1,8 +1,9 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import Layout, {siteTitle} from '../components/layout'
-import DateComp from '../components/date'
-import {getSortedPostsData} from '../lib/posts'
+import Layout, {siteTitle} from 'components/layout'
+import DateComp from 'components/date'
+import Footer from 'components/Footer'
+import {getSortedPostsData} from 'lib/posts'
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData()
@@ -42,12 +43,7 @@ export default function Home({ allPostsData }) {
         </div>
       </main>
 
-      <footer className="w-full h-full border-t border-solid flex justify-center items-center">
-        <div className="mt-8">
-          &copy; {new Date().getFullYear()} Brendon Otto <br />
-          Made with ♥ in MN
-        </div>
-      </footer>
+      <Footer />
     </Layout>
   )
 }
