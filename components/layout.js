@@ -1,15 +1,13 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
-import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
 
 const name = "Brendon Otto"
 export const siteTitle = "Brendon's Blog"
 
 export default function Layout({ children, home }) {
     return (
-        <div className={styles.container}>
+        <div className="max-w-xl py-0 px-4 my-12 mx-auto mb-24">
             <Head>
                 <link rel="icon" href="/favicon.ico" />
                 <meta 
@@ -23,32 +21,34 @@ export default function Layout({ children, home }) {
                 <meta name="og:title" content={siteTitle} />
                 <meta name="twitter:card" content="summary_large_image" />
             </Head>
-            <header className={styles.header}>
+            <header className="flex flex-col items-center">
                 {home ? (
                     <>
                         <Image
                             src="/images/profile.jpg"
-                            height={157}
+                            height={96}
                             width={96}
-                            className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
+                            className="rounded-full w-32 h-32"
                             alt={name}
                         />
-                        <h1 className={utilStyles.heading2X1}>{name}</h1>
+                        <h1 className="text-4xl font-extrabold tracking-tighter my-4 mx-0">{name}</h1>
                     </>
                     ) : (
                         <>
                             <Link href="/">
                                 <a>
-                                    <img
+                                    <Image
                                         src="/images/profile.jpg"
-                                        className={`${styles.headerImage} ${utilStyles.borderCircle}`}
+                                        height={96}
+                                        width={96}
+                                        className="rounded-full w-24 h-24"
                                         alt={name}
                                     />
                                 </a>
                             </Link>
-                            <h2 className={utilStyles.headingLg}>
+                            <h2 className="text-2xl my-4 mx-0">
                                 <Link href="/">
-                                    <a className={utilStyles.colorInherit}>{name}</a>
+                                    <a className="colors-inherit">{name}</a>
                                 </Link>
                             </h2>
                         </>
@@ -57,7 +57,7 @@ export default function Layout({ children, home }) {
             </header>
             <main>{children}</main>
             {!home && (
-                <div className={styles.backToHome}>
+                <div className="mt-12 mx-0 mb-0">
                     <Link href="/">
                         <a>← Back to home</a>
                     </Link>
