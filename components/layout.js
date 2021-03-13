@@ -39,14 +39,14 @@ export default function Layout({ children, home }) {
                                 <a>
                                     <Image
                                         src="/images/profile.jpg"
-                                        height={96}
-                                        width={96}
+                                        height={64}
+                                        width={64}
                                         className="rounded-full w-24 h-24"
                                         alt={name}
                                     />
                                 </a>
                             </Link>
-                            <h2 className="text-2xl my-4 mx-0">
+                            <h2 className="text-xl my-4 mx-0">
                                 <Link href="/">
                                     <a className="colors-inherit">{name}</a>
                                 </Link>
