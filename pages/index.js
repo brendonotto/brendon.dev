@@ -16,7 +16,7 @@ export async function getStaticProps() {
 
 export default function Home({ allPostsData }) {
   return (
-    <Layout className="min-h-screen py-0 px-2 flex flex-col justify-center items-center">
+    <Layout home className="min-h-screen py-0 px-2 flex flex-col justify-center items-center">
       <Head>
         <title>{siteTitle}</title>
         <link rel="icon" href="/favicon.ico" />
