@@ -26,7 +26,7 @@ export default function Home({ allPostsData }) {
         <h1 className="m-0 text-6l">
         </h1>
 
-        <div className="flex items-center justify-center flex-wrap max-w-4xl mt-12">
+        <div className="flex flex-col items-center justify-center flex-wrap max-w-4xl mt-12">
           {allPostsData.map(({ id, date, title }) => {
             return (
             <li key={id} className="list-none">
